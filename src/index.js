@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./Styles/reset.css";
-import App from "./App";
-import Login from "./Pages/Login/Login";
-import Main from "./Pages/Main/Main";
+import "../src/Styles/reset.css"
+import Login from "./Pages/Login/login";
+import Main from "./Pages/Main/main";
 
 ReactDOM.render(
     <React.StrictMode>
-        {/* <App /> */}
         <Login />
-        {/* <Main/> */}
+        {/* <Main /> */}
     </React.StrictMode>,
     document.getElementById("root")
 );
