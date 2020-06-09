@@ -1,0 +1,618 @@
+/* Navigation */
+.nav-container {
+    position: fixed;
+    height: 54px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    border-bottom: 1px solid rgba(219, 219, 219, 1);
+}
+
+.gnb-nav {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.gnb-menu {
+    display: flex;
+    height: 54px;
+}
+
+.nav-size {
+    display: flex;
+    width: 360px;
+}
+
+.nav-size.logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-size.menu {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-size.menu ul {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 80px;
+}
+
+.nav-size.menu ul li {
+    padding-left: 55px;
+}
+
+#logo {
+    display: flex;
+    justify-content: start;
+    width: 103px;
+    height: 29px;
+}
+
+.gnb-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 125px;
+    width: 215px;
+    height: 28px;
+}
+
+.serch-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-icon {
+    position: relative;
+    padding-right: 10px;
+    height: 10px;
+    width: 10px;
+    background-image: url(../../Images/spriteMain.png);
+    background-repeat: no-repeat;
+    background-position: -124px -213px;
+}
+
+#search {
+    border: 1px solid rgba(219, 219, 219, 1);
+    border-radius: 3px;
+    color: rgba(38, 38, 38, 1);
+    background: rgba(250, 250, 250, 1);
+    outline: 0;
+    padding: 3px 10px 3px 26px;
+    text-align: center;
+}
+
+#search-span {
+    color: rgba(142, 142, 142, 1);
+}
+
+.nav-size.menu ul li a span {
+    position: absolute;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#home-icon {
+    background-image: url(../../Images/spriteMain.png);
+    background-position: -285px -370px;
+}
+
+#direct-icon {
+    background-image: url(../../Images/spriteMain.png);
+    background-position: 0px -370px;
+}
+
+#search-person-icon {
+    background-image: url(../../Images/explore.png);
+    background-size: contain;
+}
+
+#feed-icon {
+    background-image: url(../../Images/heart.png);
+    background-size: contain;
+}
+
+#myinfo-icon {
+    background-image: url(../../Images/profile.png);
+    background-size: contain;
+}
+
+#comment-icon {
+    background-image: url(../../Images/comment.png);
+    background-size: contain;
+}
+
+#share-icon {
+    background-image: url(../../Images/spriteMain.png);
+    background-position: -390px -395px;
+    position: relative;
+    margin-left: 410px;
+}
+
+/* Main */
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    /* background-color: yellow; */
+}
+
+.gnb-main {
+    width: 975px;
+    padding-top: 80px;
+    display: inline-flex;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+/* Left Container */
+.left-main-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 10px;
+    /* background-color: skyblue; */
+}
+
+#OPF {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 82px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: 1px solid rgba(219, 219, 219, 1);
+}
+
+#OPF .OPF-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+}
+
+#OPF .OPF-items li {
+    display: flex;
+    position: relative;
+    top: -2px;
+    left: -7px;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 0 5px 0 5px;
+    overflow: hidden;
+}
+
+#items-img1{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -5px -5px;
+}
+
+#items-img2{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -65px -5px;
+}
+
+#items-img3{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -120px -5px;
+}
+
+#items-img4{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -185px -5px;
+}
+
+#items-img5{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -10px -90px;
+}
+
+#items-img6{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -68px -90px;
+}
+
+#items-img7{
+    background-image: url(../../Images/Avengers.jpg);
+    background-size: 250px;
+    background-position: -125px -90px;
+}
+
+#OPF .OPF-items li img {
+    width: 56px;
+    height: 56px;
+    background-color: white;
+}
+
+.gradient-border {
+    padding: 3px;
+    margin: 7px;
+    --borderWidth: 2px;
+    width: 56px;
+    height: 56px;
+    position: relative;
+    border-radius: var(--borderWidth);
+    z-index: -1;
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: 50%;
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.FP-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.FP-comment-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#FP {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    border: 1px solid rgba(219, 219, 219, 1);
+    width: 100%;
+}
+
+#FP .FP-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    font-weight: 500;
+}
+
+#FP div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #FP div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    font-weight: 500;
+} */
+
+#feedimg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#more {
+    padding-left: 420px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
+
+.FP-Pic {
+    position: relative;
+    z-index: -9999;
+}
+
+#feedPic {    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-bottom: 10px;
+}
+
+.FP-like {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.FP-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 5px;
+}
+
+.FP-icon a span {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.FP-likeCount {
+    padding-right: 16px;
+    padding-left: 16px;
+    font-weight: 500;
+}
+
+.FP-likeCount button {
+    border: none;
+    background-color: white;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.FP-like-container{
+    position: relative;
+    display: flex;
+    height: 100%;
+    z-index: 1;
+}
+
+.FP-commentView {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-weight: 500;
+    flex-direction: column;
+    display: flex;
+}
+
+.FP-commentView div {
+    display: flex;
+}
+
+.comment-span{
+    max-width: 450px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.comment button{
+    position: absolute;
+    left: 520px;
+    border: none;
+    background-color: white;
+}
+
+.FP-time {
+    display: flex;
+    padding-top: 5px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 0.5em;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.FP-comment {
+    display: flex;
+    flex-direction: row;
+    height: 56px;
+    width: 100%;
+    border-top:1px solid rgba(219, 219, 219, 1);
+}
+
+.FP-comment div form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    width: 100%;
+}
+
+.FP-comment .FP-comment-div {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+}
+
+.FP .FP-comment {
+    display: flex;
+    align-items: flex-end;
+}
+
+.FP-comment button {
+    border: none;
+    background-color: white;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    color: rgba(0, 149, 246, 1);
+    width: 30px;
+}
+
+#FP-textarea {
+    width: 100%;
+    height: 20px;
+}
+
+/* Right Container */
+.right-main-container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#MF {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#profile {
+    padding: 15px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+#MF span {
+    font-weight: 500;
+}
+
+#RD {
+    width: 100%;
+}
+
+#RD div {
+    font-size: 14px;
+    line-height: 18px;
+    margin: -3px 0 -4px;
+    color: rgba(142, 142, 142, 1);
+    display: inline;
+    padding: 15px;
+}
+
+#RD a div {
+    display: inline;
+    padding: 15px;
+    position: relative;
+    left: 100px;
+    color: black;
+    font-weight: 500;
+}
+
+#Follow {
+    display: flex;
+    width: 100%;
+    margin-top: 4px;
+    justify-content: flex-start;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+#Follow a img {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.follow-detail {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+}
+
+.follow-aside {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.follow-detail div {
+    color: rgba(142, 142, 142, 1);
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer-main-container {
+    display: flex;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.footer-main-container ul li {
+    display: inline-flex;
+    color: rgba(199, 199, 199, 1);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    text-transform: none;
+}
+
+.footer-main-container ul li::after {
+    content: '\00B7';
+    margin: 0 .25em 0 .25em;
+}
+
+.footer-main-container span {
+    display: inline-flex;
+    color: rgba(199, 199, 199, 1);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    text-transform: none;
+}
+
+.instargram-right {
+    color: rgba(199, 199, 199, 1);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    padding: 15px;
+}
+
