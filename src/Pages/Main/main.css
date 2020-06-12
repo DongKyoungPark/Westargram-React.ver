@@ -202,43 +202,43 @@
     overflow: hidden;
 }
 
-#items-img1{
+#items-img1 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -5px -5px;
 }
 
-#items-img2{
+#items-img2 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -65px -5px;
 }
 
-#items-img3{
+#items-img3 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -120px -5px;
 }
 
-#items-img4{
+#items-img4 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -185px -5px;
 }
 
-#items-img5{
+#items-img5 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -10px -90px;
 }
 
-#items-img6{
+#items-img6 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -68px -90px;
 }
 
-#items-img7{
+#items-img7 {
     background-image: url(../../Images/Avengers.jpg);
     background-size: 250px;
     background-position: -125px -90px;
@@ -262,7 +262,7 @@
 }
 
 .gradient-border:after {
-    content: '';
+    content: "";
     position: absolute;
     top: calc(-1 * var(--borderWidth));
     left: calc(-1 * var(--borderWidth));
@@ -317,7 +317,7 @@
 
 #FP div a {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -348,7 +348,7 @@
     z-index: -9999;
 }
 
-#feedPic {    
+#feedPic {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -400,7 +400,7 @@
     margin-bottom: 5px;
 }
 
-.FP-like-container{
+.FP-like-container {
     position: relative;
     display: flex;
     height: 100%;
@@ -415,11 +415,21 @@
     display: flex;
 }
 
-.FP-commentView div {
+.comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-arange {
     display: flex;
 }
 
-.comment-span{
+/* .FP-commentView div {
+    display: flex;
+    flex-direction: row;
+} */
+
+.comment-span {
     max-width: 450px;
     display: block;
     white-space: nowrap;
@@ -427,7 +437,7 @@
     overflow: hidden;
 }
 
-.comment button{
+.comment button {
     position: absolute;
     left: 520px;
     border: none;
@@ -449,7 +459,7 @@
     flex-direction: row;
     height: 56px;
     width: 100%;
-    border-top:1px solid rgba(219, 219, 219, 1);
+    border-top: 1px solid rgba(219, 219, 219, 1);
 }
 
 .FP-comment div form {
@@ -595,8 +605,8 @@
 }
 
 .footer-main-container ul li::after {
-    content: '\00B7';
-    margin: 0 .25em 0 .25em;
+    content: "\00B7";
+    margin: 0 0.25em 0 0.25em;
 }
 
 .footer-main-container span {
@@ -615,4 +625,3 @@
     line-height: 13px;
     padding: 15px;
 }
-

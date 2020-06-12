@@ -95,6 +95,16 @@
     border-radius: 4px;
 }
 
+.login-buttonColorChange{
+    width: 70%;
+    height: 30px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    background-color: #0095f6;
+    border-radius: 4px;
+}
+
 .or {
     display: flex;
     margin: 15px 55px 18px;
