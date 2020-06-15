@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import "../Main/main.css";
-import Logo from "../../Images/logo_text1.png";
 import AvengersLogo from "../../Images/AvengersLogo.jpg";
 import More from "../../Images/more.png";
 import Marvel from "../../Images/marvel.jpg";
 import Dan from "../../Images/Dan.png";
-import Comment from "../../Components/comment";
+import Navigation from "../../Components/navigation";
+// import Comment from "../../Components/comment";
 
 class Main extends Component {
     constructor(props) {
@@ -16,7 +16,11 @@ class Main extends Component {
             usersList: [],
             comment: "",
             commentList: [],
+            likeBtnState: false,
+            likeIcon: "feed-icon-dislike",
+            likeCount: 0,
         };
+        this.inputText = createRef();
     }
 
     CommentHandler = (e) => {
@@ -27,69 +31,60 @@ class Main extends Component {
     };
 
     CommentButtonHandler = (e) => {
-        e.preventDefault();
-        this.state.usersList.push(this.state.users++);
-        console.log("comment: ", this.state.comment);
+        let usersCount = this.state.users;
+        if (this.state.comment === "") {
+            return alert("댓글을 입력하세요.");
+        } else {
+            this.state.usersList.push(usersCount++);
+            this.state.commentList.push(this.state.comment);
+            this.setState({
+                users: usersCount,
+                comment: "",
+            });
+        }
+    };
 
-        this.state.commentList.push(this.state.comment);
-        console.log(this.state.commentList);
-        this.setState({
-            comment: this.state.comment,
-        });
+    PressEnter = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            this.CommentButtonHandler();
+            this.inputText.current.focus();
+        }
+    };
+
+    DeleteComment = (userNum) => {
+        console.log(this.state.users);
+        console.log(this.state.users !== userNum);
+        // this.setState({ commentList: this.commentList.filter(this.state.users !== userNum) });
+    };
+
+    likeBtnHandler = (e) => {
+        e.preventDefault();
+        this.state.likeBtnState = !this.state.likeBtnState;
+
+        if (this.state.likeBtnState) {
+            if (this.state.likeCount <= 0) {
+                this.state.likeCount = 0;
+            } else {
+                this.state.likeCount--;
+                this.setState({ likeIcon: "feed-icon-dislike" });
+            }
+        } else {
+            this.state.likeCount++;
+            this.setState({ likeIcon: "feed-icon-like" });
+        }
     };
 
     render() {
+        const { users, usersList, comment, commentList, likeBtnState, likeIcon, likeCount } = this.state;
+        const { CommentHandler, CommentButtonHandler, PressEnter, DeleteComment, likeBtnHandler, inputText } = this;
+
+        // console.log("comment: ", this.state.comment);
+        // console.log("commentList :", this.state.commentList);
         return (
             <>
                 <div className="full-container">
-                    <div className="nav-container">
-                        <nav className="gnb-nav">
-                            <div className="nav-size logo">
-                                <a href="/">
-                                    <img id="logo" src={Logo} alt="logo" />
-                                </a>
-                            </div>
-
-                            <div className="gnb-search">
-                                <div className="serch-box">
-                                    <span id="search-icon"></span>
-                                    <span id="search-span">검색</span>
-                                </div>
-                                <input id="search" type="text" placeholder="" />
-                            </div>
-
-                            <div className="gnb-menu">
-                                <ul>
-                                    <li>
-                                        <a href="/home">
-                                            <span id="home-icon"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/direct">
-                                            <span id="direct-icon"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/searchPerson">
-                                            <span id="search-person-icon"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/feed">
-                                            <span id="feed-icon"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/myInfo">
-                                            <span id="myinfo-icon"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-
+                    <Navigation />
                     <div className="main-container">
                         <main className="gnb-main">
                             <div className="left-main-container">
@@ -152,44 +147,29 @@ class Main extends Component {
                                         <div className="FP-like-container">
                                             <div className="FP-like">
                                                 <section className="FP-icon">
-                                                    <a href="/feed">
-                                                        <span id="feed-icon"></span>
-                                                    </a>
-                                                    <a href="/comment">
-                                                        <span id="comment-icon"></span>
-                                                    </a>
-                                                    <a href="/direct">
-                                                        <span id="direct-icon"></span>
-                                                    </a>
-                                                    <a href="/share">
-                                                        <span id="share-icon"></span>
-                                                    </a>
+                                                    <span onClick={likeBtnHandler} id={likeIcon}></span>
+                                                    <span id="comment-icon"></span>
+                                                    <span id="direct-icon"></span>
+                                                    <span id="share-icon"></span>
                                                 </section>
-
                                                 <section className="FP-likeCount">
                                                     <button type="button">
-                                                        <p>좋아요 100개</p>
+                                                        <p>좋아요 {likeCount}개</p>
                                                     </button>
                                                 </section>
-
+                                                {/* <Comment commentList={this.state.commentList} deleteComment={this.DeleteComment} /> */}
                                                 <div className="FP-commentView">
                                                     <div className="comment">
-                                                        {this.state.usersList.map((count, index) => {
+                                                        {commentList.map((comment, userNum) => {
                                                             return (
-                                                                <div className="comment-arange" key={index}>
+                                                                <div className="comment-arange" key={userNum}>
                                                                     <a className="user" href="/">
                                                                         user
-                                                                        {count}
+                                                                        {userNum}
                                                                     </a>
                                                                     &nbsp; &nbsp;
-                                                                    {this.state.commentList.map((comment, index) => {
-                                                                        return (
-                                                                            <span className="comment-span" key={index}>
-                                                                                {comment}
-                                                                            </span>
-                                                                        );
-                                                                    })}
-                                                                    <button className="deleteComment" type="button">
+                                                                    <span className="comment-span">{comment}</span>
+                                                                    <button onClick={DeleteComment} className="deleteComment" type="button">
                                                                         삭제
                                                                     </button>
                                                                 </div>
@@ -197,7 +177,6 @@ class Main extends Component {
                                                         })}
                                                     </div>
                                                 </div>
-
                                                 <div className="FP-time">
                                                     <div>
                                                         <a href="/">
@@ -207,12 +186,20 @@ class Main extends Component {
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div className="FP-comment-container">
                                             <section className="FP-comment">
                                                 <div className="FP-comment-div">
-                                                    <form action="/">
-                                                        <textarea onChange={this.CommentHandler} id="FP-textarea" aria-label="댓글 달기" placeholder="댓글 달기..."></textarea>
-                                                        <button onClick={this.CommentButtonHandler} id="comment-submit" type="button">
+                                                    <form action="#">
+                                                        <input
+                                                            ref={inputText}
+                                                            value={comment}
+                                                            onChange={CommentHandler}
+                                                            onKeyPress={PressEnter}
+                                                            id="FP-input"
+                                                            placeholder="댓글 달기..."
+                                                        ></input>
+                                                        <button onClick={CommentButtonHandler} id="comment-submit" type="button">
                                                             게시
                                                         </button>
                                                     </form>

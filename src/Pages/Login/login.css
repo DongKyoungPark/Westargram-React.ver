@@ -31,13 +31,13 @@
     top: 90px;
     right: 60px;
     width: 250px;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 1.5s ease-in;
 }
 
-.lc .main-pic.selected{
+.lc .main-pic.selected {
     opacity: 1;
-} 
+}
 
 .right-login-container {
     display: flex;
@@ -91,11 +91,11 @@
     border: none;
     color: white;
     font-weight: 500;
-    background-color: rgba(0, 149, 246, .3);
+    background-color: rgba(0, 149, 246, 0.3);
     border-radius: 4px;
 }
 
-.login-buttonColorChange{
+.login-buttonColorChange {
     width: 70%;
     height: 30px;
     border: none;
@@ -124,7 +124,7 @@
     background-color: rgba(219, 219, 219, 1);
     height: 1px;
     position: relative;
-    top: .45em;
+    top: 0.45em;
 }
 
 .facebook-login {
@@ -249,7 +249,6 @@
     display: flex;
     order: 5;
     padding: 0 20px;
-
 }
 
 .footer-login-container {
